@@ -1,58 +1,31 @@
 # The Dead Architect
 
-The Dead Architect is a fictional producer portfolio website and an intentionally vulnerable local CTF challenge. It contains no real secrets, credential theft features, persistence mechanisms, or destructive behavior.
+Architect was an electronic music producer who disappeared before finishing a mysterious archive. Their portfolio remains online, along with traces of an unfinished record and a studio that seems to have kept notes of its own.
 
 ## Requirements
 
-- Docker Desktop with Docker Compose
+- A modern web browser
 
-## Start the challenge
+## Access
 
-From this directory, build and start the container:
+Use the challenge URL provided by the event organizer:
 
-```text
-docker compose up --build
-```
+`https://<hosted-challenge-url>`
 
-Open [http://localhost:5000](http://localhost:5000) in a browser. The container includes a health check at `/health`.
+No account on any external service is required.
 
-To run in the background:
+## Flag Format
 
-```text
-docker compose up --build -d
-```
+Submit flags in the format:
 
-## Stop the challenge
+`CTF{...}`
 
-```text
-docker compose down
-```
+## Rules
 
-To also remove the persisted SQLite volume and reset the sample data:
+- Attack only the hosted challenge instance supplied by the organizers.
+- Do not target the hosting provider, other participants, external systems, or third-party services.
+- Do not use real credentials, personal data, malware, persistence, or destructive techniques.
+- Keep command execution, if encountered, within the challenge environment and use it only to solve the challenge.
+- Do not share flags, private challenge materials, or unintended infrastructure details during the event.
+- Report suspected infrastructure problems to the organizers instead of exploiting them.
 
-```text
-docker compose down -v
-```
-
-## Project locations
-
-- Flask application: `challenge/app/app.py`
-- SQLite setup and queries: `challenge/app/database.py`
-- HTML templates: `challenge/app/templates/`
-- CSS and JavaScript: `challenge/app/static/`
-- Future challenge artifacts: `organizer/`
-
-The SQLite database is initialized automatically when the web container starts and is stored in the `challenge-data` Docker volume.
-
-The generated player artifacts are served only through their application routes: the encrypted archive is at `/media/vault.enc`, the audio is at `/media/final_mix.wav`, the native analysis target is at `/media/architect_node`, and the Git archive is at `/archive/architect-notes.git`. Organizer scripts regenerate these during the Docker build.
-
-For organizer validation outside Docker, run `python organizer/verify_challenge.py` after installing the test dependencies and a C compiler. The automated tests are in `tests/`.
-
-## Sample login
-
-The foundation includes a deliberately non-sensitive sample account for demonstrating the login flow:
-
-- Username: `architect`
-- Password: `demo-only`
-
-Replace or remove this sample account as the challenge develops. Do not use real credentials or secrets in this local challenge.
