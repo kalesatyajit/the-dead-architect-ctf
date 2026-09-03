@@ -1,0 +1,11 @@
+# Keep authoring and validation material out of the deployment build context.
+/organizer/
+/tests/
+/requirements-dev.txt
+/artifacts/
+**/solution.md
+**/verify_challenge.py
+__pycache__/
+*.pyc
+*.db
+.git/

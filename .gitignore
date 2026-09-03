@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.db
+
+# Private CTF-authoring and validation material. Player-facing assets live in
+# challenge/artifacts/ and must remain tracked.
+/organizer/
+/tests/
+/requirements-dev.txt
+/artifacts/
+**/solution.md
+**/verify_challenge.py
