@@ -1,0 +1,28 @@
+:root { --ink: #e9e4da; --muted: #9f9b93; --night: #111211; --line: #393a35; --accent: #d35d45; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--night); color: var(--ink); font-family: 'Space Grotesk', sans-serif; min-height: 100vh; }
+a { color: inherit; text-decoration: none; }
+.site-header { display: flex; justify-content: space-between; align-items: flex-start; padding: 32px 5vw; border-bottom: 1px solid var(--line); }
+.wordmark { font: 500 15px/0.9 'DM Mono', monospace; letter-spacing: 0; }
+.wordmark span { color: var(--accent); }
+nav { display: flex; gap: 28px; font: 12px 'DM Mono', monospace; text-transform: uppercase; }
+nav a:hover, .text-link:hover { color: var(--accent); }
+.hero { min-height: 68vh; padding: 13vh 10vw 10vh; background: radial-gradient(circle at 85% 20%, #34362d 0, transparent 30%), linear-gradient(120deg, #111211 0%, #191b18 100%); }
+.eyebrow, .section-heading, .site-footer { color: var(--muted); font: 11px 'DM Mono', monospace; letter-spacing: 0.06em; text-transform: uppercase; }
+h1 { max-width: 850px; margin: 28px 0; font-size: clamp(3rem, 8vw, 8.5rem); font-weight: 400; letter-spacing: 0; line-height: 0.92; }
+.hero-copy { max-width: 380px; margin: 0 0 34px; color: #c1beb5; line-height: 1.5; }
+.button { display: inline-flex; align-items: center; gap: 18px; border: 1px solid var(--ink); padding: 13px 17px; font: 12px 'DM Mono', monospace; text-transform: uppercase; transition: background .2s, color .2s; }
+.button:hover { background: var(--ink); color: var(--night); }
+.section-wrap { max-width: 1200px; margin: 0 auto; padding: 90px 5vw; }
+.section-heading { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 16px; }
+.project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; padding-top: 28px; }
+.project-card:nth-child(2) { margin-top: 80px; }
+.cover-art { aspect-ratio: 1.15; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; color: #111211; background: var(--cover); font: 12px 'DM Mono', monospace; text-transform: uppercase; }
+.cover-art b { max-width: 70%; font: 500 clamp(1.8rem, 4vw, 4.5rem)/.9 'Space Grotesk', sans-serif; text-transform: none; }
+.project-card p { display: flex; justify-content: space-between; color: var(--muted); font: 12px 'DM Mono', monospace; }
+.projects-page h1 { margin-bottom: 70px; }
+.archive-list { border-top: 1px solid var(--line); }.archive-row { display: grid; grid-template-columns: 80px 1fr 1fr 30px; align-items: center; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--line); font: 12px 'DM Mono', monospace; }.archive-row:hover { color: var(--accent); }.archive-row strong { font: 400 22px 'Space Grotesk', sans-serif; }.archive-row em { color: var(--muted); font-style: normal; }
+.detail-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 8vw; align-items: start; }.cover-art.large { aspect-ratio: 1; }.detail-copy { padding-top: 10px; max-width: 390px; line-height: 1.6; }.text-link { display: inline-block; margin-top: 30px; font: 12px 'DM Mono', monospace; text-transform: uppercase; }
+.form-page { min-height: 70vh; }.login-form { display: grid; max-width: 400px; gap: 10px; }.login-form label { margin-top: 18px; color: var(--muted); font: 11px 'DM Mono', monospace; text-transform: uppercase; }.login-form input { width: 100%; padding: 14px 0; border: 0; border-bottom: 1px solid var(--line); outline: 0; background: transparent; color: var(--ink); font: 17px 'Space Grotesk', sans-serif; }.login-form input:focus { border-color: var(--accent); }.login-form .button { margin-top: 28px; background: transparent; color: var(--ink); cursor: pointer; }.form-error { color: var(--accent); font-size: 13px; }
+.site-footer { display: flex; justify-content: space-between; padding: 24px 5vw; border-top: 1px solid var(--line); }
+@media (max-width: 650px) { .site-header { padding: 24px 5vw; } nav { gap: 12px; font-size: 10px; }.hero { min-height: 72vh; padding: 12vh 8vw 8vh; }.section-wrap { padding: 65px 8vw; }.project-grid, .detail-layout { grid-template-columns: 1fr; }.project-card:nth-child(2) { margin-top: 0; }.archive-row { grid-template-columns: 48px 1fr 24px; gap: 10px; }.archive-row em { display: none; }.site-footer { gap: 12px; flex-direction: column; font-size: 9px; } }

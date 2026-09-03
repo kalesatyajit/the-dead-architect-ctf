@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studio Login | The Dead Architect</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="site-header"><a class="wordmark" href="{{ url_for('index') }}">THE DEAD<br><span>ARCHITECT</span></a><nav><a href="{{ url_for('projects') }}">Projects</a></nav></header>
+  <main class="form-page section-wrap">
+    <p class="eyebrow">Private studio</p><h1>Open the session.</h1>
+    <form method="post" class="login-form">
+      <label for="username">Username</label><input id="username" name="username" required autocomplete="username">
+      <label for="password">Password</label><input id="password" name="password" type="password" required autocomplete="current-password">
+      {% if error %}<p class="form-error">{{ error }}</p>{% endif %}
+      <button class="button" type="submit">Sign in <span>↗</span></button>
+    </form>
+  </main>
+</body>
+</html>

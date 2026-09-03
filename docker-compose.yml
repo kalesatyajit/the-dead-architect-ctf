@@ -1,0 +1,21 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: challenge/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      DATABASE_PATH: /data/dead_architect.db
+      ARTIFACTS_PATH: /app/artifacts
+    volumes:
+      - challenge-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/health', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+
+volumes:
+  challenge-data:
